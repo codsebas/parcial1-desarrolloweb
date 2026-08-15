@@ -1,5 +1,5 @@
 export function isValidCarne(value) {
-  return /^\d{4}-\d{2}-\d{5}$/.test(String(value ?? '').trim());
+  return /^\d{4}-\d{2}-\d{4,5}$/.test(String(value ?? '').trim());
 }
 
 export function isValidEmail(value) {

@@ -13,8 +13,12 @@ test('carné válido', () => {
   assert.equal(isValidCarne('1890-23-12105'), true);
 });
 
+test('carné con 4 dígitos en el último segmento es válido', () => {
+  assert.equal(isValidCarne('1890-23-1210'), true);
+});
+
 test('carnés inválidos', () => {
-  for (const value of ['18902312105', '1890-2-12105', '1890-23-1210', 'abcd-23-12105', '1890 23 12105']) {
+  for (const value of ['18902312105', '1890-2-12105', '1890-23-121', '1890-23-121055', 'abcd-23-12105', '1890 23 12105']) {
     assert.equal(isValidCarne(value), false);
   }
 });
