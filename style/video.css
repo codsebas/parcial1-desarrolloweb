@@ -11,8 +11,9 @@
 .video-player {
   overflow: hidden;
   border-radius: var(--radius);
-  background: #020617;
+  background: #060a08;
   border: 1px solid var(--color-border);
+  box-shadow: 0 0 22px rgba(57, 255, 20, 0.15);
 }
 
 .video-player video,
@@ -49,7 +50,7 @@
 
 .comment-reply {
   margin-left: 1.5rem;
-  background: #f8fafc;
+  background: #0d1410;
 }
 
 .reply-list {
