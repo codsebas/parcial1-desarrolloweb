@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Detalle y reproductor de un video educativo.">
+  <link rel="stylesheet" href="/style/styles.css">
+  <link rel="stylesheet" href="/style/video.css">
+  <title>Detalle del video</title>
+</head>
+<body>
+  <div class="site-shell" data-video-page>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a class="brand" href="/index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Video Aula</span>
+        </a>
+        <div class="site-actions" data-user-identity></div>
+        <div class="site-actions" data-auth-actions></div>
+      </nav>
+    </header>
+
+    <main class="site-main video-layout">
+      <section class="section video-shell">
+        <div class="callout callout-danger" data-video-status hidden aria-live="polite"></div>
+        <div class="callout callout-info" data-video-loader hidden></div>
+
+        <div class="video-summary" data-video-detail></div>
+
+        <div class="video-player" data-video-player></div>
+
+        <div class="callout callout-warning" data-auth-guard hidden>
+          Debes iniciar sesión para dar me gusta, comentar o responder.
+          <a class="button button-small" href="/pages/login.html?returnTo=/pages/video.html">Ir a login</a>
+        </div>
+
+        <div class="auth-actions">
+          <button class="button" data-like-button type="button">Me gusta</button>
+          <span class="user-badge">Likes: <strong data-like-count>0</strong></span>
+        </div>
+
+        <div class="callout callout-info" data-comment-status hidden aria-live="polite"></div>
+
+        <form class="comment-form section" data-comment-form>
+          <h2>Publicar comentario</h2>
+          <label class="field-group" for="commentText">
+            <span class="sr-only">Comentario</span>
+            <textarea id="commentText" class="textarea" data-comment-text placeholder="Escribe tu comentario" required></textarea>
+          </label>
+          <button class="button" type="submit">Comentar</button>
+        </form>
+      </section>
+
+      <section class="section comment-area">
+        <div class="section-header">
+          <h2>Comentarios</h2>
+        </div>
+        <div data-comments-list></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span>Albino Sebastián Rosales Ruano</span>
+        <span>1890-23-12105</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/script/video.js"></script>
+  <script>
+    (function () {
+      if (window.location.protocol === 'file:') {
+        var banner = document.createElement('div');
+        banner.setAttribute('role', 'alert');
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#b91c1c;color:#fff;padding:14px 20px;font-family:system-ui,sans-serif;font-size:14px;line-height:1.4;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.3)';
+        banner.textContent = 'Estás abriendo la app con file://. Para que funcione, sirve la carpeta por HTTP: ejecuta "python -m http.server 5500" y abre http://localhost:5500/ (o usa VS Code Live Server).';
+        document.body.appendChild(banner);
+      }
+    })();
+  </script>
+</body>
+</html>

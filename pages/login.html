@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Catálogo de videos educativos del primer parcial de Desarrollo y Diseño Web.">
+  <meta name="description" content="Iniciar sesión en el catálogo de videos educativos.">
   <link rel="stylesheet" href="/style/styles.css">
-  <title>Catálogo de Videos Educativos</title>
+  <link rel="stylesheet" href="/style/auth.css">
+  <title>Iniciar sesión</title>
 </head>
-<body>
-  <div class="site-shell" data-catalog-page>
+<body class="auth-page">
+  <div class="site-shell" data-login-page>
     <header class="site-header">
       <nav class="site-nav" aria-label="Navegación principal">
         <a class="brand" href="/index.html">
@@ -20,38 +21,35 @@
       </nav>
     </header>
 
-    <main class="site-main">
-      <section class="hero">
-        <div class="hero-grid">
-          <div>
-            <h1>Catálogo de videos educativos</h1>
-            <p class="lead">Busca por título, filtra por categoría y abre el detalle para reproducir cada video.</p>
-          </div>
-          <div class="callout callout-info">
-            <strong>Acceso académico</strong>
-            <p class="muted">Registro, inicio de sesión y comentarios requieren sesión activa.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
+    <main class="site-main auth-layout">
+      <section class="section auth-panel">
         <div class="section-header">
-          <h2>Buscar y filtrar</h2>
-          <span class="muted" data-catalog-summary></span>
+          <h1>Iniciar sesión</h1>
+          <a class="button button-secondary" href="/pages/registro.html">Crear cuenta</a>
         </div>
-        <div class="controls">
-          <label class="field-group" for="searchVideos">
-            <span class="muted">Buscar por título</span>
-            <input id="searchVideos" class="search-input" type="search" placeholder="Escribe un título..." data-search-input>
-          </label>
-          <div class="chips" aria-label="Categorías" data-categories></div>
-        </div>
-      </section>
 
-      <section class="section">
-        <div class="callout callout-info" data-catalog-loader hidden></div>
-        <div class="callout callout-danger" data-catalog-status hidden aria-live="polite"></div>
-        <div class="catalog-grid" data-catalog-grid></div>
+        <p class="muted">Usa tu carné o tu correo electrónico junto con el PIN.</p>
+
+        <form class="auth-grid" data-login-form>
+          <label class="field-group" for="usuario">
+            <span>Usuario</span>
+            <input id="usuario" name="usuario" class="field" autocomplete="username" required>
+            <small class="field-error" data-error-for="usuario"></small>
+          </label>
+
+          <label class="field-group" for="password">
+            <span>PIN</span>
+            <input id="password" name="password" class="field" type="password" inputmode="numeric" autocomplete="current-password" required>
+            <small class="field-error" data-error-for="password"></small>
+          </label>
+
+          <div class="auth-actions">
+            <button class="button" type="submit" data-login-submit>Ingresar</button>
+            <a class="button button-secondary" href="/index.html">Volver al catálogo</a>
+          </div>
+
+          <div class="callout callout-info" data-login-status hidden aria-live="polite"></div>
+        </form>
       </section>
     </main>
 
@@ -63,7 +61,7 @@
     </footer>
   </div>
 
-  <script type="module" src="/script/script.js"></script>
+  <script type="module" src="/script/login.js"></script>
   <script>
     (function () {
       if (window.location.protocol === 'file:') {

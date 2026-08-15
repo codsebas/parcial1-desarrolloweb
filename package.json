@@ -1,0 +1,9 @@
+{
+  "name": "parcial-1-desarrollo-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "test:api": "node scripts/smoke-api.mjs"
+  }
+}

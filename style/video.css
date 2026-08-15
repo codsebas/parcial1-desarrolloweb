@@ -1,0 +1,71 @@
+.video-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.video-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.video-player {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #020617;
+  border: 1px solid var(--color-border);
+}
+
+.video-player video,
+.video-player iframe {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.comment-area {
+  display: grid;
+  gap: 1rem;
+}
+
+.comment-form,
+.reply-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.comment-thread {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.comment,
+.reply-list {
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  padding: 0.9rem;
+}
+
+.comment-reply {
+  margin-left: 1.5rem;
+  background: #f8fafc;
+}
+
+.reply-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-left: 1rem;
+}
+
+.video-summary {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .video-layout {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+}

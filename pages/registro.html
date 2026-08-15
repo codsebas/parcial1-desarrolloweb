@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registrar un estudiante para el catálogo de videos educativos.">
+  <link rel="stylesheet" href="/style/styles.css">
+  <link rel="stylesheet" href="/style/auth.css">
+  <title>Registro de estudiante</title>
+</head>
+<body class="auth-page">
+  <div class="site-shell" data-registration-page>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a class="brand" href="/index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Video Aula</span>
+        </a>
+        <div class="site-actions" data-user-identity></div>
+        <div class="site-actions" data-auth-actions></div>
+      </nav>
+    </header>
+
+    <main class="site-main auth-layout">
+      <section class="section auth-panel">
+        <div class="section-header">
+          <h1>Registro de estudiante</h1>
+          <a class="button button-secondary" href="/pages/login.html">Ya tengo cuenta</a>
+        </div>
+
+        <form class="auth-grid" data-registration-form>
+          <label class="field-group" for="carne">
+            <span>Carné</span>
+            <input id="carne" name="carne" class="field" autocomplete="off" placeholder="1890-23-12105" required>
+            <small class="field-error" data-error-for="carne"></small>
+          </label>
+
+          <label class="field-group" for="estudiante">
+            <span>Nombre del estudiante</span>
+            <input id="estudiante" name="estudiante" class="field" autocomplete="name" required>
+            <small class="field-error" data-error-for="estudiante"></small>
+          </label>
+
+          <label class="field-group" for="correo">
+            <span>Correo</span>
+            <input id="correo" name="correo" class="field" type="email" autocomplete="email" required>
+            <small class="field-error" data-error-for="correo"></small>
+          </label>
+
+          <label class="field-group" for="password">
+            <span>PIN</span>
+            <input id="password" name="password" class="field" type="password" inputmode="numeric" autocomplete="new-password" required>
+            <small class="field-error" data-error-for="password"></small>
+          </label>
+
+          <label class="field-group" for="confirmPassword">
+            <span>Confirmar PIN</span>
+            <input id="confirmPassword" name="confirmPassword" class="field" type="password" inputmode="numeric" autocomplete="new-password" required>
+            <small class="field-error" data-error-for="confirmPassword"></small>
+          </label>
+
+          <div class="auth-actions">
+            <button class="button" type="submit" data-registration-submit>Registrarme</button>
+            <a class="button button-secondary" href="/index.html">Volver al catálogo</a>
+          </div>
+
+          <div class="callout callout-info" data-registration-status hidden aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span>Albino Sebastián Rosales Ruano</span>
+        <span>1890-23-12105</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/script/registro.js"></script>
+  <script>
+    (function () {
+      if (window.location.protocol === 'file:') {
+        var banner = document.createElement('div');
+        banner.setAttribute('role', 'alert');
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#b91c1c;color:#fff;padding:14px 20px;font-family:system-ui,sans-serif;font-size:14px;line-height:1.4;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.3)';
+        banner.textContent = 'Estás abriendo la app con file://. Para que funcione, sirve la carpeta por HTTP: ejecuta "python -m http.server 5500" y abre http://localhost:5500/ (o usa VS Code Live Server).';
+        document.body.appendChild(banner);
+      }
+    })();
+  </script>
+</body>
+</html>
